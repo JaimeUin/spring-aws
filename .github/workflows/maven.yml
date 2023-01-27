@@ -12,9 +12,6 @@ on:
   push:
     branches: [ "development" ]
 
-env:
-  ## Sets environment  variable
-
 jobs:
   build:
     runs-on: self-hosted
