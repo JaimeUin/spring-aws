@@ -12,6 +12,10 @@ on:
   push:
     branches: [ "development" ]
 
+env:
+  ## Sets environment variable
+  GITHUB_ACTOR: JaimeUin
+  GITHUB_TOKEN: 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
 jobs:
   build:
     runs-on: self-hosted
