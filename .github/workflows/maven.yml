@@ -28,7 +28,7 @@ jobs:
       run: ./mvnw -X -B package --file pom.xml
 
     - name: killing port 80
-      run: sudo kill -9 ´sudo lsof -t -i:80´
+      run: sudo kill 'sudo lsof -t -i:80'
 
     - name: install node
       run: sudo apt-get install nodejs
