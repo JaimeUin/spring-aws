@@ -26,9 +26,28 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: ./mvnw -X -B package --file pom.xml
-    - name: Execute Jar File
-      run: sudo kill `sudo lsof -t -i:80` & sudo java -jar /home/ubuntu/actions-runner/_work/spring-aws/spring-aws/target/spring-aws-0.0.1-SNAPSHOT.jar
 
+    - name: liberando puerto 80
+      run: sudo kill -9 `sudo lsof -t -i:80
 
-    - name: final testing
-      run: ls -all
+    - name: install node
+      run: sudo apt-get install nodejs
+
+    - name: install npm
+      run: sudo apt install npm
+
+    - name: install pm2
+      run: sudo npm install pm2 -g
+    - name: install pm2 2
+      run: sudo pm2 completion install
+    - name: install pm2 3
+      run: pm2 update
+    - name: up with pm2 springboot
+      run: pm2 start java -- -jar spring-aws/target/spring-aws-0.0.1-SNAPSHOT.jar
+
+      # antes debejs intalar node
+      # antes debejs intalar npm
+      # antes debejs intalar pm2
+      # esto de abajo se reemplaza ejecutando un archivo .sh para levantar la app mediante pm2
+      # - name: Execute Jar File
+      #  run: sudo kill -9 `sudo lsof -t -i:80` & sudo java -jar /home/ubuntu/actions-runner/_work/spring-aws/spring-aws/target/spring-aws-0.0.1-SNAPSHOT.jar
