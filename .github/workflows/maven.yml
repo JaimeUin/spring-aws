@@ -46,7 +46,8 @@ jobs:
       run: |
         sudo pwd
         sudo ls -all
-        sudo cd target
+        sudo ls /target
+        sudo pwd
     - name: where i am?
       run: sudo pwd
     - name: what i found?
