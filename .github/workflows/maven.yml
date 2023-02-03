@@ -53,8 +53,7 @@ jobs:
       run: |
         sudo pwd
         sudo ls -all
-        sudo sh -c "cd target"
-        sudo pwd
+    # sudo sh -c "cd target"
 
 # two check verification
     - name: where i am?
@@ -64,7 +63,13 @@ jobs:
 
 # validate again if is starting with pm2
     - name: up with pm2 springboot
-      run: sudo pm2 start npm -name "spring-aws" -- -jar target/spring-aws-0.0.1-SNAPSHOT.jar
+      run: sudo pm2 start npm -name "spring-aws2" -- -jar target/spring-aws-0.0.1-SNAPSHOT.jar
+
+# three check verification
+    - name: where i am?
+      run: sudo pwd
+    - name: what i found?
+      run: sudo ls -all
 
       # antes debejs intalar node
       # antes debejs intalar npm
