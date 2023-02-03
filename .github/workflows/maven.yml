@@ -17,16 +17,20 @@ jobs:
     runs-on: self-hosted
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up JDK 17
-      uses: actions/setup-java@v3
-      with:
-        java-version: '17'
-        distribution: 'adopt'
-        cache: maven
+   # - uses: actions/checkout@v3
+   # - name: Set up JDK 17
+   #   uses: actions/setup-java@v3
+   #   with:
+   #     java-version: '17'
+   #     distribution: 'adopt'
+   #     cache: maven
+   # - name: Build with Maven
+   #   run: ./mvnw -X -B package --file pom.xml
+
+
+
     - name: Build with Maven
       run: ./mvnw -X -B package --file pom.xml
-
 # meter un validador de puerto 80d
     # - name: killing port 80
     #  run: sudo kill -9 $(sudo lsof -t -i:80)
