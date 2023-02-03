@@ -42,13 +42,18 @@ jobs:
       run: sudo pm2 completion install
     - name: install pm2 3
       run: pm2 update
+    - name: Clean install dependencies and build
+      run: |
+        sudo pwd
+        sudo ls -all
+        sudo cd target
     - name: where i am?
       run: sudo pwd
     - name: what i found?
       run: sudo ls -all
 
     - name: up with pm2 springboot
-      run: pm2 start java -- -jar ./target/spring-aws-0.0.1-SNAPSHOT.jar
+      run: pm2 start java -- -jar target/spring-aws-0.0.1-SNAPSHOT.jar
 
       # antes debejs intalar node
       # antes debejs intalar npm
