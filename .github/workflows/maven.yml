@@ -48,7 +48,7 @@ jobs:
       run: sudo ls -all
 
     - name: up with pm2 springboot
-      run: pm2 start java -- -jar spring-aws/target/spring-aws-0.0.1-SNAPSHOT.jar
+      run: pm2 start java -- -jar ./target/spring-aws-0.0.1-SNAPSHOT.jar
 
       # antes debejs intalar node
       # antes debejs intalar npm
