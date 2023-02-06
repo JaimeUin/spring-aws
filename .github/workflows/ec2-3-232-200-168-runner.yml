@@ -47,7 +47,8 @@ jobs:
         run:  ./mvnw -X -B package --file pom.xml
   # meter un validador de puerto 80d
       - name: killing port 80 if is used
-        run: sudo kill -9 $(sudo lsof -t -i:80)
+        if: sudo kill -9 $(sudo lsof -t -i:80) == 1
+        run:  sudo pwd
 
       #- name: install node
        # run: sudo apt-get install nodejs
@@ -63,10 +64,10 @@ jobs:
       #  run: pm2 update
 
   # its working
-      - name: directions
-        run: |
-          sudo pwd
-          sudo ls -all
+    #  - name: directions
+     #   run: |
+      #    sudo pwd
+       #   sudo ls -all
       # sudo sh -c "cd target"
 
   # two check verification
