@@ -83,7 +83,7 @@ jobs:
       - name: up with pm2 springboot
         run:  sudo pm2 start ./spring-aws.sh --name=spring-aws
       - name: log pm2 springboot
-      run: sudo pm2 log 0
+        run: sudo pm2 log 0
 
       #  run:  sudo java -jar target/spring-aws-0.0.1-SNAPSHOT.jar
       #  run:  sudo pm2 start npm -name "spring-aws2" -- -jar target/spring-aws-0.0.1-SNAPSHOT.jar
