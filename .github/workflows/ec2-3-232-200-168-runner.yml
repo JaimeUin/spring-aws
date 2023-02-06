@@ -81,7 +81,7 @@ jobs:
 
   # subiendo java
       - name: up with pm2 springboot
-        run:  sudo pm2 start ../spring-aws.sh --name=spring-aws
+        run:  sudo pm2 start target/spring-aws.sh --name=spring-aws
 
       - name: log pm2 springboot
         run: sudo pm2 log 0
