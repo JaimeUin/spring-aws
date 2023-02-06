@@ -9,6 +9,6 @@ public class UserController {
 
     @GetMapping("info")
     public String demo(){
-        return "buenas buenas!!";
+        return "buenas buenas!!!";
     }
 }
