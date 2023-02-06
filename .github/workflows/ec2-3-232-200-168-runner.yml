@@ -31,9 +31,9 @@ jobs:
         run:  sudo pm2 update
 # first check verification
       - name: where i am?
-        run: sudo pwd
+        run:  sudo pwd
       - name: what i found?
-        run: sudo ls -all
+        run:  sudo ls -all
 
   build:
     runs-on: self-hosted
@@ -53,7 +53,7 @@ jobs:
       run: ./mvnw -X -B package --file pom.xml
 # meter un validador de puerto 80d
     - name: killing port 80 if is used
-      if: ${{ sudo lsof -t -i:80 }}
+      if: ${ sudo lsof -t -i:80 }
       run: sudo kill -9 $(sudo lsof -t -i:80)
 
     #- name: install node
