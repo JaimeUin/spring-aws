@@ -48,7 +48,8 @@ jobs:
       - name: Build with Maven
         run:  ./mvnw -X -B package --file pom.xml
 
-      #- name: meter un validador de puerto 80d
+      - name: meter un validador de puerto 80d
+          sudo kill -9 `sudo lsof -t -i:80`
       #  run:  sudo kill -9 ${ sudo lsof -t -i:80 }
 
 
@@ -80,14 +81,15 @@ jobs:
 
   # subiendo java
       - name: up with pm2 springboot
-        run:  sudo java -jar target/spring-aws-0.0.1-SNAPSHOT.jar
+        run:  sudo pm2 start spring-aws.sh --name=spring-aws
+      #  run:  sudo java -jar target/spring-aws-0.0.1-SNAPSHOT.jar
       #  run:  sudo pm2 start npm -name "spring-aws2" -- -jar target/spring-aws-0.0.1-SNAPSHOT.jar
 
   # three check verification
-      - name: where i am?
-        run:  sudo pwd
-      - name: what i found?
-        run:  sudo ls -all
+    #   - name: where i am?
+    #    run:  sudo pwd
+    #  - name: what i found?
+    #    run:  sudo ls -all
 
         # antes debejs intalar node
         # antes debejs intalar npm
