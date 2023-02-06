@@ -1,12 +1,11 @@
 {
   "apps":[
     {
-      "name":"graphhopper",
+      "name":"spring-aws",
       "cwd":".",
       "script":"/usr/bin/java",
       "args":[
         "-jar",
-        "/home/ubuntu/actions-runner/_work/spring-aws/spring-aws/target/spring-aws-0.0.1-SNAPSHOT.jar",
         "server",
         "config.yml"
       ],
