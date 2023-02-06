@@ -15,24 +15,24 @@ jobs:
       runs-on: self-hosted
       steps:
       - name: update apt
-        run: sudo apt update
+        run:  sudo apt update
       - name: install java && maven
-        run: sudo apt install maven openjdk-17-jre openjdk-17-jdk
+        run:  sudo apt install maven openjdk-17-jre openjdk-17-jdk
       - name: install node
-        run: sudo apt-get install nodejs
+        run:  sudo apt-get install nodejs
       - name: install npm
-        run: sudo apt install npm
+        run:  sudo apt install npm
       - name: install pm2
-        run: npm install pm2 -g
+        run:  sudo npm install pm2 -g
       - name: install pm2 2
-        run: sudo pm2 completion install
+        run:  sudo pm2 completion install
       - name: install pm2 3
-        run: sudo pm2 update
+        run:  sudo pm2 update
       # first check verification
       - name: where i am?
-        run: sudo pwd
+        run:  sudo pwd
       - name: what i found?
-        run: sudo ls -all
+        run:  sudo ls -all
 
         # - uses: actions/checkout@v3
      # - name: Set up JDK 17
@@ -45,7 +45,7 @@ jobs:
      #   run: ./mvnw -X -B package --file pom.xml
 
       - name: Build with Maven
-        run: ./mvnw -X -B package --file pom.xml
+        run:  ./mvnw -X -B package --file pom.xml
   # meter un validador de puerto 80d
       #- name: killing port 80 if is used
       #  if: ${{ lsof -t -i:80 }}
@@ -73,19 +73,19 @@ jobs:
 
   # two check verification
       - name: where i am?
-        run: sudo pwd
+        run:  sudo pwd
       - name: what i found?
-        run: sudo ls -all
+        run:  sudo ls -all
 
   # validate again if is starting with pm2
       - name: up with pm2 springboot
-        run: sudo pm2 start npm -name "spring-aws2" -- -jar target/spring-aws-0.0.1-SNAPSHOT.jar
+        run:  sudo pm2 start npm -name "spring-aws2" -- -jar target/spring-aws-0.0.1-SNAPSHOT.jar
 
   # three check verification
       - name: where i am?
-        run: sudo pwd
+        run:  sudo pwd
       - name: what i found?
-        run: sudo ls -all
+        run:  sudo ls -all
 
         # antes debejs intalar node
         # antes debejs intalar npm
